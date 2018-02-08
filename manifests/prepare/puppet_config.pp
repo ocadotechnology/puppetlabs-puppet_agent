@@ -37,7 +37,7 @@ class puppet_agent::prepare::puppet_config (
         # Deprecated for global config
         'config_version', 'manifest', 'modulepath',
         # Settings that should be reset to defaults
-        'disable_warnings', 'vardir', 'rundir', 'libdir', 'confdir', 'ssldir', 'classfile']
+        'disable_warnings', 'vardir', 'rundir', 'libdir', 'confdir', 'ssldir', 'classfile', 'logdir']
     } else {
       $_removed_settings = []
     }
