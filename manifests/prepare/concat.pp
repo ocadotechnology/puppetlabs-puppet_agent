@@ -15,6 +15,7 @@ class puppet_agent::prepare::concat {
       source  => $::concat_basedir,
       backup  => false,
       recurse => true,
+      require => Package[$puppet_agent::package_name],
     }
   }
 
