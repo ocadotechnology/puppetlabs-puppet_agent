@@ -61,6 +61,11 @@ class puppet_agent::prepare(
       }
       contain puppet_agent::prepare::ssl
 
+      class { 'puppet_agent::prepare::concat':
+        before => Class[$_osfamily_class],
+      }
+      contain puppet_agent::prepare::concat
+
       # manage client.cfg and server.cfg contents
       file { $::puppet_agent::params::mcodirs:
         ensure => directory,
