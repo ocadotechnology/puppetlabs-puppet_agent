@@ -2,9 +2,9 @@
 #
 # Private class called from puppet_agent::prepare class
 #
-# This copies over concat fragments on update
+# This copies over concat fragments on upgrade
 #
-class puppet_agent::prepare::concat {
+class puppet_agent::post::concat {
   assert_private()
 
   $concat_dir = "${::puppet_agent::params::local_puppet_dir}/puppet/cache/concat"
