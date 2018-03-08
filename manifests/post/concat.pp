@@ -11,11 +11,12 @@ class puppet_agent::post::concat {
 
   if $::concat_basedir {
     file { $concat_dir:
-      ensure  => directory,
-      source  => $::concat_basedir,
-      backup  => false,
-      recurse => true,
-      require => Package[$puppet_agent::package_name],
+      ensure             => directory,
+      source             => $::concat_basedir,
+      backup             => false,
+      recurse            => true,
+      source_permissions => use,
+      require            => Package[$puppet_agent::package_name],
     }
   }
 
