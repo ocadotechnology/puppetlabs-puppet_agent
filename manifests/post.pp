@@ -16,7 +16,11 @@ class puppet_agent::post {
       class { 'puppet_agent::post::concat':
         before => Class[$_osfamily_class],
       }
+      class { 'puppet_agent::post::patch':
+        before => Class[$_osfamily_class],
+      }
       contain puppet_agent::post::concat
+      contain puppet_agent::post::patch
 
     }
   }
